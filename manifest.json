@@ -16,6 +16,8 @@
     }
   ],
       "icons": {
-        "128": "Group.png"
+        "16": "size16.png",
+        "48": "size48.png",
+        "128": "size128.png"
       }
 }
