@@ -1,0 +1,18 @@
+{
+  "manifest_version": 1,
+  "name": "Kittens and Rainbows",
+  "description": "Chrome extension that replaces Donald Trump and Hillary Clinton With Kittens and Rainbows emojis",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "index.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
