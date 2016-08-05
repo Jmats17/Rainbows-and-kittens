@@ -1,34 +1,23 @@
+//Made by Justin Matsnev
 var elements = document.getElementsByTagName('*');
+var arrayOfTrumpNames = ['Donald Trump', 'Donald J. Trump', 'Donald', 'Trump', 'donaldjtrump.com'];
 
-for (var i = 0; i < elements.count; i++) {
+for (var i = 0; i < elements.length; i++) {
     var element = elements[i];
 
   for (var j = 0; j < element.childNodes.length; j++) {
     var node = element.childNodes[j];
 
     if (node.nodeType === 3) {
-      var htmlText = node.nodeType;
-      var replacedHTMLTextUpperCaseFullHillary = text.replace(/Hillary Clinton/gi, '🌈');
-      var replacedHTMLTextUpperCaseFirstHillary = text.replace(/Hillary/gi, '🌈');
-      var replacedHTMLTextUpperCaseFullTrump = text.replace(/Donald Trump/gi, '🐈');
-      var replacedHTMLTextUpperCaseFirstTrump = text.replace(/Trump/gi, '🐈');
-
-      if (htmlText == 'Hillary Clinton' && htmlText !== replacedHTMLTextUpperCaseFirstHillary) {
-        element.replaceChild(document.createTextNode(replacedHTMLTextUpperCaseFullHillary), node);
-      }
-
-      if (htmlText == 'Hillary' && htmlText !== replacedHTMLTextUpperCaseFirstHillary) {
-        element.replaceChild(document.createTextNode(replacedHTMLTextUpperCaseFirstHillary), node);
-      }
-
-      if (htmlText == 'Donald Trump' && htmlText !== replacedHTMLTextUpperCaseFullTrump) {
-        element.replaceChild(document.createTextNode(replacedHTMLTextUpperCaseFullTrump), node);
-      }
-
-      if (htmlText == 'Trump' && htmlText !== replacedHTMLTextUpperCaseFirstTrump) {
-        element.replaceChild(document.createTextNode(replacedHTMLTextUpperCaseFirstTrump), node);
-      }
-
+      var htmlText = node.nodeValue;
+        var replacedTrumpText = htmlText.replace(/Donald Trump|Donald J. Trump|Donald|Trump|donaldjtrump.com|realDonaldTrump|Trump's/gi, "🐈");
+        var replacedHillaryText = htmlText.replace(/Hillary Diane Rodham Clinton|Hillary Rodham Clinton|Hillary Clinton|Hillary|Clinton|hillaryclinton|hillaryclinton.com/gi, "🌈");
+        if (replacedHillaryText !== htmlText) {
+          element.replaceChild(document.createTextNode(replacedHillaryText), node);
+        }
+        if (replacedTrumpText !== htmlText) {
+          element.replaceChild(document.createTextNode(replacedTrumpText), node);
+        }
     }
 
   }
